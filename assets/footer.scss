@@ -1,0 +1,48 @@
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+    border-top: 1px solid $text-color;
+    padding-top: 1em;
+    font-size: small;
+    color: $text-color;
+}
+
+footer .fas, footer .fab {
+    font-size: large;
+    transition: all .15s ease-in-out;
+}
+
+footer ul li a i {
+    color: $text-color;
+}
+
+footer ul {
+	display: table;
+	margin: auto;
+    padding: 0;
+}
+
+footer li {
+	list-style-type: none;
+	display: inline-block;
+    padding: 0px 10px;
+}
+
+footer .fas:hover, footer .fab:hover {
+    color: $link-color;
+    transform: scale(1.5);
+}
+
+footer a {
+    color: $text-color;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+}
+
+footer a:hover  {
+    text-decoration-style: solid;
+    text-decoration-color: $link-color;
+}

@@ -1,0 +1,36 @@
+
+.post {
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    h1 a {
+        text-decoration: none !important;
+        margin-bottom: 0;
+    }
+
+    time {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size: small;
+        margin-top: -1.5em;
+        margin-bottom: 0.5em;
+        padding: 0;
+    }
+
+}
+
+.post > :first-child { margin-top: 0 !important; }
+
+.post-separator {
+    width: 80%;
+    margin: 64px auto;
+}
+
+.read-more {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}

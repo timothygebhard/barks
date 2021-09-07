@@ -1,0 +1,42 @@
+.landing-page-wrapper {
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.landing-page-content {
+    width: 64%; 
+    align-items: center;
+    display: inline-flex;
+}
+
+.landing-page-image {
+    align-items: center;
+    width: 30%; 
+    text-align: center;
+    padding: 0;
+    display: inline-flex;
+}
+
+.landing-page-image img {
+    margin: 0;
+    height: auto;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .landing-page-content {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 1em;
+    }
+
+    .landing-page-image {
+        width: 100%;
+        margin: auto;
+    }
+
+}

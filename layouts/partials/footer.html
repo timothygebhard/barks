@@ -1,0 +1,56 @@
+
+{{ if not (eq .Site.Params.footer.show_footer false) }}
+<footer>
+
+    {{ if and (not (eq .Site.Params.social.show_social false)) }}
+    {{ with .Site.Params.social }}
+    <ul>
+
+        <!-- E-Mail -->
+        {{ if not (eq .email "") }}
+            <li><a href="mailto:{{ .email }}" title="E-Mail"><i class="fas fa-envelope"></i></a></li>
+        {{ end }}
+
+        <!-- GitHub -->
+        {{ if not (eq .github "") }}
+            <li><a href="{{ .github }}" title="GitHub"><i class="fab fa-github"></i></a></li>
+        {{ end }}
+
+        <!-- Google Scholar -->
+        {{ if not (eq .google_scholar "") }}
+            <li><a href="{{ .google_scholar }}" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a></li>
+        {{ end }}
+
+        <!-- Instagram -->
+        {{ if not (eq .instagram "") }}
+            <li><a href="{{ .instagram }}" title="GitHub"><i class="fab fa-instagram"></i></a></li>
+        {{ end }}
+
+        <!-- Institution -->
+        {{ if not (eq .institution "") }}
+            <li><a href="{{ .institution }}" title="Institution"><i class="fas fa-university"></i></a></li>
+        {{ end }}
+    
+        <!-- ORCID -->
+        {{ if not (eq .orcid "") }}
+            <li><a href="{{ .orcid }}" title="ORCID"><i class="fab fa-orcid"></i></a></li>
+        {{ end }}
+
+        <!-- Skype -->
+        {{ if not (eq .email "") }}
+            <li><a href="{{ .skype }}" title="Skype"><i class="fab fa-skype"></i></a></li>
+        {{ end }}
+
+        <!-- Twitter -->
+        {{ if not (eq .twitter "") }}
+            <li><a href="{{ .twitter }}" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+        {{ end }}
+
+    </ul> 
+    {{ end }}
+    {{ end }}
+
+    {{ .Site.Copyright | safeHTML }}
+
+</footer>
+{{ end }}

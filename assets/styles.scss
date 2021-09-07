@@ -1,0 +1,29 @@
+/*
+Read the variables defined in the config.toml file and define the corresponding
+SCSS variables. This is achieved by `resources.ExecuteAsTemplate` in the <head>;
+warnings by a linter that the following is not valid SCSS can be ignored.
+*/
+
+$title-font: {{ .Site.Params.typography.title_font | default "Bree Serif" }};
+$body-font: {{ .Site.Params.typography.body_font | default "Source Sans Pro" }};
+
+$background-color: {{ .Site.Params.colors.background_color | default "#fcfbf9" }};
+$text-color: {{ .Site.Params.colors.text_color | default "#333333" }};
+$link-color: {{ .Site.Params.colors.link_color | default "#60c17d" }};
+
+
+
+
+/*
+Load the rest of the stylesheets.
+*/
+
+@import "_default.scss";
+@import "code.scss";
+@import "footer.scss";
+@import "header.scss";
+@import "navigation.scss";
+@import "landing_page.scss";
+@import "main.scss";
+@import "post.scss";
+@import "typography.scss";

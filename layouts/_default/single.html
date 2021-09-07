@@ -1,0 +1,7 @@
+
+{{ define "main" }}
+    {{ if not .Params.hide_title }}
+        <h1>{{ .Title | safeHTML }}</h1>
+    {{ end }}
+    {{ .Content | safeHTML }}
+{{ end }}

@@ -1,0 +1,202 @@
+
+/*
+General
+*/
+
+p {
+	margin: 1em 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+em, q, em, dfn {
+	font-style: italic;
+}
+
+strong {
+	font-weight: 600;
+}
+
+del, s {
+	text-decoration: line-through;
+}
+
+hr {
+	width: 50%;
+	height: 1px;
+	background: $text-color;
+	margin: 64px auto;
+}
+
+small, sub, sup { 
+    font-size: small; 
+}
+
+sub {
+    vertical-align: sub;
+}
+
+sup {
+    vertical-align: super;
+}
+
+kbd {
+    border: 1px solid $text-color;
+    border-radius: 4px;
+    font-size: smaller;
+    padding: 0 0.25em;
+}
+
+
+
+/*
+Headings
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0.6em;
+}
+
+h1 {
+	font-size: 26px;
+    margin-top: 2.4em;
+}
+
+h2 {
+	font-size: 22px;
+    margin-top: 2.0em;
+}
+
+h3 {
+	font-size: 18px;
+    margin-top: 1.8em;
+}
+
+h4 {
+    font-size: 16px;
+    margin-top: 1.6em;
+}
+
+h5 {
+    font-size: 14px;
+    margin-top: 1.4em;
+}
+
+h6 {
+    font-size: 12px;
+    margin-top: 1.2em;
+}
+
+
+
+/*
+Block quotes
+*/
+
+blockquote {
+    border-left: 4px solid $link-color;
+    font-style: italic;
+    padding: 0.5em 2em;
+}
+
+blockquote cite {
+    font-style: normal;
+    display: block;
+    font-size: smaller;
+    width: 100%;
+    text-align: right;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+
+
+/*
+Lists
+*/
+
+ol, ul {
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.25em;
+}
+
+
+
+/*
+Tables
+*/
+
+table {
+    border-collapse: collapse;
+    margin: 1.5em auto;
+    width: 90%;
+}
+
+table>tbody>tr:last-child {
+    border-bottom: 2px solid rgba(invert($background-color), 0.2);
+}
+
+th {
+    border-top: 2px solid rgba(invert($background-color), 0.2);
+    border-bottom: 1px solid rgba(invert($background-color), 0.2);
+    padding: 0.25em;
+}
+
+td {
+    padding: 0.25em;
+}
+
+
+
+/*
+Footnotes
+*/
+
+.footnotes {
+    font-size: small;
+}
+
+.footnotes ol li p {
+    margin: 0;
+}
+
+.footnote-ref {
+    color: $link-color;
+    text-decoration: none !important;
+    font-weight: 700;
+    display: inline-block;
+    padding: 0 1px;
+}
+
+.footnote-backref {
+    color: $link-color;
+    text-decoration: none !important;
+    font-weight: 700;
+    display: inline-block;
+    padding: 0 1px;
+}
+
+
+
+/*
+LaTeX / KaTeX
+*/
+
+.katex { 
+    font-size: 1.1em !important;
+}
+
+span .katex-display {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}

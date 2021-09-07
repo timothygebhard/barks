@@ -1,0 +1,9 @@
+
+{{ define "main" }}
+
+{{  range $i, $e := .Data.Pages }}
+    {{- if $i -}}<hr class="post-separator">{{ end -}}
+    {{ partial "post_li.html" $e }}
+{{ end }}
+
+{{ end }}

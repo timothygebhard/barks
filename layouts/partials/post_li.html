@@ -1,0 +1,14 @@
+
+<article class="post">
+
+    {{ partial "post_title.html" . }}
+
+    {{- .Content | safeHTML | truncate 600 -}}
+    
+    {{- if gt (len (.Content | safeHTML)) 600 -}}
+        <div class="read-more">
+            <a href="{{ .RelPermalink }}">Continue reading...</a>
+        </div>
+    {{- end -}}
+
+</article>

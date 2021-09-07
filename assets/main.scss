@@ -1,0 +1,57 @@
+
+main {
+
+	text-align: left;
+	width: 100%;
+	padding-top: 25px;
+    padding-bottom: 40px;
+    color: $text-color;
+
+    a {
+        color: $text-color;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-underline-offset: 3px;
+    }
+
+    a:hover  {
+        text-decoration-style: solid;
+        text-decoration-color: $link-color;
+    }
+
+
+    figure {
+        display: block;
+        width: 90%;
+        margin: 2em auto;
+        text-align: center;
+    }
+
+    figure table {
+        width: 100%;
+    }
+
+    figcaption {
+        font-size: smaller;
+        line-height: 1.5em;
+        color: rgba($text-color, 0.75);
+        margin-bottom: -1em;
+        text-align: left;
+    }
+
+    figcaption a {
+        @if (lightness($background-color) < 55%) { 
+            color: grayscale(darken(invert($background-color), 50%)) !important; 
+        } @else { 
+            color: grayscale(lighten(invert($background-color), 50%)) !important; 
+        }
+    }
+
+    figcaption h4 {
+        display: inline;
+        font-weight: normal;
+    }
+
+}
+
+main > :first-child { margin-top: 0 !important; }

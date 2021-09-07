@@ -1,0 +1,82 @@
+
+<head>
+
+    <!-- Add Hugo version and build date -->
+    {{ hugo.Generator }}
+    <meta name="date" content="{{ hugo.BuildDate }}">
+
+    <!-- Set meta tags -->
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="6000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="{{ .Site.Params.colors.theme_color | default "#333333" }}">
+
+    <!-- Add author, description and keywords -->
+    <meta name="author" content="{{ .Site.Params.head.Author }}">
+    <meta name="description" content="{{ .Site.Params.head.Description }}" />
+    {{ with .Site.Params.head.keywords }}
+        <meta name="keywords" content="{{ delimit .  ", " }}" />
+    {{ end }}
+
+    <!-- Define title -->
+    {{ if .IsHome}}
+        <title>{{- .Site.Title -}}&nbsp;•&nbsp;Home</title>
+    {{ else }}
+        <title>{{- .Site.Title -}}&nbsp;•&nbsp;{{- .Title -}}</title>
+    {{ end }}
+
+    <!-- Define OpenGraph (OG) properties -->
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="{{ .Site.Params.head.description }}" />
+
+    <!-- Add title for Twitter-->
+    <meta name="twitter:title" content="{{ .Site.Title }}" />
+
+    <!-- Define canonical link -->
+    <link rel="canonical" href="{{ .Permalink }}">
+    
+    <!-- Set favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+    <!-- Generate CSS file from SCSS and include -->
+    {{ $template := resources.Get "styles.scss" }}
+    {{ $style := $template | resources.ExecuteAsTemplate "styles.scss" . | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink | absURL }}">
+
+    <!-- Include custom CSS file -->
+    {{ with .Site.Params.head.custom_css }}
+        <link href="{{ . }}" rel="stylesheet">
+    {{ end }}
+
+    <!-- Load Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {{ if isset .Site.Params.typography "title_font" }}
+        <link rel="preload" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.title_font }}&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.title_font }}&display=swap"></noscript>
+    {{ else }}
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"></noscript>
+    {{ end }}
+    {{ if isset .Site.Params.typography "body_font" }}
+        <link rel="preload" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.body_font }}:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.body_font }}:400,700&display=swap"></noscript>
+    {{ else }}
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap"></noscript>
+    {{ end }}
+
+    <!-- Load CSS for FontAwesome icons -->
+    {{ if .Site.Params.social.show_social }}
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    {{ end }}
+
+</head>
