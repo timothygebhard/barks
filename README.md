@@ -120,7 +120,7 @@ You can add your social media profiles and contact options to the footer via the
     [params.social.google_scholar]
         name = "Google Scholar"
         class = "ai ai-google-scholar-square"
-        url = "https://scholar.google.com/<your_user_id>"
+        url = "https://scholar.google.com/citations?user=<your_user_id>"
         weight = 3
 ```
 
