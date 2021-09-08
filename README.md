@@ -63,11 +63,13 @@ You can disable the navigation (e.g., if all your content fits onto a single pag
 
 ```toml
 [params.navigation]
-    show_navigation = true
+    show_navigation = false
 
 [params.footer]
-    show_footer = true
+    show_footer = false
 ```
+
+Set these values to `true` (or omit them altogether) if you *do* want to use the navigation and the footer.
 
 <br>
 
