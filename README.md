@@ -101,22 +101,33 @@ Change the colors of the [theme](https://developer.mozilla.org/en-US/docs/Web/HT
 
 **Social media:**
 
-If you link your social media profiles or contact options, they will automatically be displayed in the footer (using icons from [FontAwesome](https://fontawesome.com)). The following platforms are currently supported:
+You can add your social media profiles and contact options to the footer via the `[params.social]` section. Here is an example of how this might look:
 
 ```toml
 [params.social]
-    email = "<email_address>"
-    github = "<github_url>"
-    google_scholar = "<google_scholar_url>"
-    instagram = "<instagram_url>"
-    institution = "<institution_url>"
-    linkedin = "<linkedin_url>"
-    orcid = "<orcid_url>"
-    skype = "<skype_url>"
-    twitter = "<twitter_url>" 
+    [params.social.email]
+        name = "E-Mail"
+        class = "fas fa-envelope"
+        url = "mailto:<your_name>@<your_institution>.com"
+        weight = 1
+    [params.social.github]
+        name = "GitHub"
+        class = "fab fa-github"
+        url = "https://github.com/<your_github_username>"
+        weight = 2
+    [params.social.google_scholar]
+        name = "Google Scholar"
+        class = "ai ai-google-scholar-square"
+        url = "https://scholar.google.com/<your_user_id>"
+        weight = 3
 ```
 
-Remove any fields you don’t need, or leave them empty.
+As you can see, each entry in the `[params.social]` section is itself a section with 4 keys:
+
+* `name`: This will be used for the `title` attribute of the link (which is what you see in the little pop-up if you place your cursor on the link).
+* `class`: This field controls which icon is used. You can use *any* icon from [FontAwesome](https://fontawesome.com/) or [Academicons](https://jpswalsh.github.io/academicons/). The icons are included as `<i class="[class]"></i>`; see the [FontAwesome manual](https://fontawesome.com/v5.15/how-to-use/on-the-web/referencing-icons/basic-use) for more information.
+* `url`: The URL to your profile for the respective platform. For e-mail addresses, add a `mailto:` [prefix](https://en.m.wikipedia.org/wiki/Mailto).
+* `weight`: Use this field to define the order by which the icons are sorted.
 
 <br>
 
