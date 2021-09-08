@@ -7,11 +7,17 @@ footer {
     padding-top: 1em;
     font-size: small;
     color: $text-color;
-}
 
-footer .fas, footer .fab {
-    font-size: large;
-    transition: all .15s ease-in-out;
+    .fas, .fab, .ai {
+        font-size: large;
+        transition: all .15s ease-in-out;
+    }
+
+    .fas:hover, .fab:hover, .ai:hover {
+        color: $link-color;
+        transform: scale(1.5);
+    }
+
 }
 
 footer ul li a i {
@@ -28,11 +34,6 @@ footer li {
 	list-style-type: none;
 	display: inline-block;
     padding: 0px 10px;
-}
-
-footer .fas:hover, footer .fab:hover {
-    color: $link-color;
-    transform: scale(1.5);
 }
 
 footer a {
