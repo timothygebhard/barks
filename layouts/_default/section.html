@@ -1,9 +1,16 @@
 
 {{ define "main" }}
 
-{{  range $i, $e := .Data.Pages }}
-    {{- if $i -}}<hr class="post-separator">{{ end -}}
-    {{ partial "post_li.html" $e }}
+<h1>{{ .Title }}</h1>
+
+{{ .Content }}
+
+{{ with .Data.Pages }}
+    <ul>
+    {{ range $i, $e := . }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+    </ul>
 {{ end }}
 
 {{ end }}
