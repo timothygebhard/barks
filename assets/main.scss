@@ -52,6 +52,10 @@ main {
         font-weight: normal;
     }
 
+    .center {
+        text-align: center;
+    }
+
 }
 
 main > :first-child { margin-top: 0 !important; }
