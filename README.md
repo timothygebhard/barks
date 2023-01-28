@@ -29,6 +29,8 @@ in your `themes` directory, and changing the `theme` parameter in your `config.t
 
 Otherwise, you might want to check out the [Hugo quickstart guide](https://gohugo.io/getting-started/quick-start/).
 
+**Note:** Since *barks* makes use of [SCSS](https://en.wikipedia.org/wiki/Sass_(stylesheet_language)), which needs to be pre-compiled, you need to make sure that you are using the [extended version](https://gohugo.io/troubleshooting/faq/#i-get--this-feature-is-not-available-in-your-current-hugo-version) of Hugo!
+
 <br><br>
 
 ## 📄 Layout for landing page
