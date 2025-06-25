@@ -1,3 +1,6 @@
+baseURL = "https://matiasostavelez.github.io/"
+title   = "Matías Osta Vélez"
+
 [module]
   [module.hugoVersion]
     extended = true
