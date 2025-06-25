@@ -6,8 +6,6 @@ title   = "Matías Osta Vélez"
     extended = true
     min = "0.87.0"
 
-    title = "Matías Osta Vélez"
-
 [params]
   author = "Matías Osta Vélez"
   description = "Philosopher of science. I work on reasoning, concepts, and cognitive models."
