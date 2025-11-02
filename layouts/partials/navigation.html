@@ -1,5 +1,5 @@
 
-{{ if not (eq .Site.Params.navigation.show_navigation false) }}
+{{ if ne .Site.Params.navigation.show_navigation false }}
 <nav>
     <ul>
     {{ range .Site.Menus.main }}
