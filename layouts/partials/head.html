@@ -58,14 +58,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    {{ if isset .Site.Params.typography "title_font" }}
+    {{ if and .Site.Params.typography (isset .Site.Params.typography "title_font") }}
         <link rel="preload" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.title_font }}&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.title_font }}&display=swap"></noscript>
     {{ else }}
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"></noscript>
     {{ end }}
-    {{ if isset .Site.Params.typography "body_font" }}
+
+    {{ if and .Site.Params.typography (isset .Site.Params.typography "body_font") }}
         <link rel="preload" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.body_font }}:400,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.typography.body_font }}:400,700&display=swap"></noscript>
     {{ else }}
